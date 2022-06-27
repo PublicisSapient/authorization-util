@@ -19,7 +19,8 @@
   "author": "Joe Carpenito",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.4.5"
+    "jest": "^27.4.5",
+    "lefthook": "^1.0.3"
   },
   "jest": {
     "verbose": true
