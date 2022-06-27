@@ -1,3 +1,9 @@
+pre-commit:
+  commands:
+    format:
+      tags: format prettier quality
+      run: npm prettier --write {staged_files} && git add {staged_files}
+
 pre-push:
   commands:
     test:
