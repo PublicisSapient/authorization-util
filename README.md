@@ -54,4 +54,7 @@ render(
 
 ```shell
 npm run test
+
+# we also have a ci specific test command that outputs coverage
+npm run test-ci
 ```
