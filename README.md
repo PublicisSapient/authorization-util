@@ -9,18 +9,25 @@ Most simply put, this is intended to allow an initial configuration of mapping a
 ## Getting going...
 
 ```javascript
-import AuthorizationService from '.'
+import AuthorizationService from ".";
 
 /**
  * Role definitions somewhere on app initialization
  */
-AuthorizationService.defineRole('admin', ['can_create_profile', 'can_edit_profile', 'can_view_profile'])
-AuthorizationService.defineRole('associate', ['can_edit_profile', 'can_view_profile'])
-AuthorizationService.defineRole('customer', ['can_view_profile'])
+AuthorizationService.defineRole("admin", [
+  "can_create_profile",
+  "can_edit_profile",
+  "can_view_profile",
+]);
+AuthorizationService.defineRole("associate", [
+  "can_edit_profile",
+  "can_view_profile",
+]);
+AuthorizationService.defineRole("customer", ["can_view_profile"]);
 
 /**
  * Example usage:
- * 
+ *
  * 1. The create button will only render for the admin role
  * 2. The edit button will only render for admin and associate roles
  * 3. The description will display for all three roles
@@ -28,23 +35,23 @@ AuthorizationService.defineRole('customer', ['can_view_profile'])
 
 render(
   <>
-    { AuthorizationService.userCan(currentRole, 'can_create_profile') && (
+    {AuthorizationService.userCan(currentRole, "can_create_profile") && (
       <Button>Create Profile</Button>
     )}
 
-    { AuthorizationService.userCan(currentRole, 'can_edit_profile') && (
+    {AuthorizationService.userCan(currentRole, "can_edit_profile") && (
       <Button>Edit Profile</Button>
     )}
 
-    { AuthorizationService.userCan(currentRole, 'can_view_profile') && (
+    {AuthorizationService.userCan(currentRole, "can_view_profile") && (
       <p>A profile description...</p>
     )}
   </>
-)
-
+);
 ```
 
 ## Test
+
 ```shell
 npm run test
 ```
