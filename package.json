@@ -1,0 +1,27 @@
+{
+  "name": "authorizationutil",
+  "version": "1.0.0",
+  "description": "Simplistic authorization management - alternative to heavy (though robust) solutions",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test-ci": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://pscode.lioncloud.net/johcarpe1/authorizationutil.git"
+  },
+  "keywords": [
+    "auth",
+    "authorization"
+  ],
+  "author": "Joe Carpenito",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.5"
+  },
+  "jest": {
+    "verbose": true
+  }
+}
