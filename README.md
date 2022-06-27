@@ -58,3 +58,5 @@ npm run test
 # we also have a ci specific test command that outputs coverage
 npm run test-ci
 ```
+
+![dennis-nedry-gif-7](https://user-images.githubusercontent.com/2083532/175975750-8feff818-b610-41ba-ac5e-a39d9b28fc8f.gif)
