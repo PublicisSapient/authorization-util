@@ -1,0 +1,5 @@
+pre-push:
+  commands:
+    test:
+      tags: unit-test quality
+      run: npm run test
