@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://pscode.lioncloud.net/johcarpe1/authorizationutil.git"
+    "url": "https://github.com/PublicisSapient/authorization-util.git"
   },
   "keywords": [
     "auth",
     "authorization"
   ],
   "author": "Joe Carpenito",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "jest": "^27.4.5",
     "lefthook": "^1.0.3",
