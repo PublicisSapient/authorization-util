@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "bundle": "rollup -c rollup.config.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "test-ci": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage"
   },
@@ -21,7 +22,8 @@
   "devDependencies": {
     "jest": "^27.4.5",
     "lefthook": "^1.0.3",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "rollup": "^2.75.7"
   },
   "jest": {
     "verbose": true
