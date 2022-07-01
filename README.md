@@ -1,6 +1,7 @@
 # Authorization Util
 
 ![unit tests](https://github.com/PublicisSapient/authorization-util/actions/workflows/node.js.yml/badge.svg)
+![published](https://github.com/PublicisSapient/authorization-util/actions/workflows/npm-publish.yml/badge.svg)
 
 Simplistic authorization management - alternative to heavy (though much more robust) solutions. The core idea is that a user has already been _authenticated_ (like having a JWT, for example), and we now need to effectively manage the _authorization_ for whatever role they may have.
 
