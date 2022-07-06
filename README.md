@@ -33,7 +33,6 @@ AuthorizationService.defineRole("customer", ["can_view_profile"]);
  * 2. The edit button will only render for admin and associate roles
  * 3. The description will display for all three roles
  */
-
 render(
   <>
     {AuthorizationService.userCan(currentRole, "can_create_profile") && (
