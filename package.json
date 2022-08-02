@@ -21,7 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^27.4.5",
-    "lefthook": "^1.0.3",
+    "lefthook": "^1.0.5",
     "prettier": "2.7.1",
     "rollup": "^2.77.0"
   },
