@@ -5,7 +5,7 @@
 
 Simplistic authorization management - alternative to heavy (though much more robust) solutions. The core idea is that a user has already been _authenticated_ (like having a JWT, for example), and we now need to effectively manage the _authorization_ for whatever role they may have.
 
-Most simply put, this is intended to allow an initial configuration of mapping authorizations to a set of roles that are available. The functionality is a very small subset of what you may get from something like [CASL](https://casl.js.org/v5/en/), but with a miniscul footprint (2kb unpacked) and zero dependencies. If all you need are the _very_ basics, this may suit your needs.
+Most simply put, this is intended to allow an initial configuration of mapping authorizations to a set of roles that are available. The functionality is a very small subset of what you may get from something like [CASL](https://casl.js.org/v5/en/), but with a miniscul footprint (less than 2kb unpacked, ~500b minified) and zero dependencies. If all you need are the _very_ basics, this may suit your needs.
 
 ## Getting going...
 
