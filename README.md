@@ -1,7 +1,6 @@
 # Authorization Util
 
 ![unit tests](https://github.com/PublicisSapient/authorization-util/actions/workflows/node.js.yml/badge.svg)
-![published](https://github.com/PublicisSapient/authorization-util/actions/workflows/module-bundle.yml/badge.svg)
 
 ![minified](https://badgen.net/bundlephobia/min/@publicissapient/authorizationutil)
 ![dep-count](https://badgen.net/bundlephobia/dependency-count/@publicissapient/authorizationutil)
