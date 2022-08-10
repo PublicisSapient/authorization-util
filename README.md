@@ -65,4 +65,6 @@ npm run test-ci
 
 Typescript was introduced as of v1.2.0.
 
+---
+
 ![dennis-nedry-gif-7](https://user-images.githubusercontent.com/2083532/175975750-8feff818-b610-41ba-ac5e-a39d9b28fc8f.gif)
