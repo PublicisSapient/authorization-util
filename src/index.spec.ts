@@ -3,7 +3,6 @@
  * @jest-environment jsdom
  */
 
-import jest from "jest-mock";
 import AuthorizationService from "./index";
 
 describe("Authorization Service", () => {
@@ -14,6 +13,10 @@ describe("Authorization Service", () => {
   it("retrieves profile information asychronously with profileAuthorize() invocation", async () => {
     // mocking fetch for this test, but if it becomes relevant to other tests in this suite, it
     // should be elevated to the whole suite (describe)
+
+    // ignoring this type error for now since it is for a mock in test
+    // need to revisit this
+    // @ts-ignore
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve({ roles: ["contact_center_associate"] }),
