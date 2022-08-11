@@ -1,8 +1,8 @@
 {
   "name": "@publicissapient/authorizationutil",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simplistic authorization management - alternative to heavy (though robust) solutions",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "bundle": "rollup -c rollup.config.js",
     "test": "npx jest",
