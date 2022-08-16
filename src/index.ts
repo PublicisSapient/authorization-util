@@ -22,7 +22,7 @@ const AuthorizationService = {
    * @param {String} role
    * @param {Array}
    */
-  defineRole: (role, policies) => {
+  defineRole: (role: string, policies: string[]) => {
     const foundPolicy = policyMap.find((policy) => policy.role === role);
 
     if (foundPolicy) {
@@ -37,7 +37,7 @@ const AuthorizationService = {
    * @param {Array} roles array of string values representing the roles of the user
    * @param {String} policy the authorization policy to check against
    */
-  userCan: (roles, policy) => {
+  userCan: (roles: string[], policy: string) => {
     const rolesFound = policyMap.filter((policy) =>
       roles.includes(policy.role)
     );
