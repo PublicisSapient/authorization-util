@@ -1,6 +1,19 @@
 import AuthorizationService from "./index";
 
+const printPerfMeasure = (startTime, endTime, unitMeasured) => {
+  const millisecondMeasure = Number(endTime - startTime) / 1000000;
+  console.log(
+    `\x1b[33m`,
+    `${unitMeasured} execution time:`,
+    `\x1b[36m`,
+    `${millisecondMeasure}ms`
+  );
+};
+
 describe("Performance Benchmark", () => {
+  /**
+   * Setup the auth service with a very performance intesive role config
+   */
   AuthorizationService.defineRole(
     "performance_intensive_role",
     (() => {
@@ -13,10 +26,12 @@ describe("Performance Benchmark", () => {
 
   it("useCan operation:", () => {
     const start = process.hrtime.bigint();
-
-    AuthorizationService.userCan(["performance_intensive_role"], "999999");
-
+    const can = AuthorizationService.userCan(
+      ["performance_intensive_role"],
+      "500000"
+    );
     const end = process.hrtime.bigint();
-    console.log(`useCan() execution time: ${Number(end - start) / 1000000}ms`);
+    printPerfMeasure(start, end, "userCan()");
+    expect(can).toEqual(true);
   });
 });
