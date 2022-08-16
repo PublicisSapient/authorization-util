@@ -37,7 +37,7 @@ const AuthorizationService = {
    * @param {Array} roles array of string values representing the roles of the user
    * @param {String} policy the authorization policy to check against
    */
-  userCan: (roles: string[], policy: string) => {
+  userCan: (roles: string[], policy: string): boolean => {
     const rolesFound = policyMap.filter((policy) =>
       roles.includes(policy.role)
     );
