@@ -1,6 +1,6 @@
 {
   "name": "@publicissapient/authorizationutil",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Simplistic authorization management - alternative to heavy (though robust) solutions",
   "main": "dist/index.js",
   "scripts": {
