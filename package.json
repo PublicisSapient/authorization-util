@@ -14,7 +14,9 @@
   },
   "keywords": [
     "auth",
-    "authorization"
+    "authorization",
+    "permissions",
+    "RBAC"
   ],
   "author": "Joe Carpenito",
   "license": "MIT",
