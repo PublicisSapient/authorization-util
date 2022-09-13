@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "bundle": "rollup -c rollup.config.js",
-    "test": "npx jest",
+    "test": "npx jest '([a-z])*.unit.spec.ts'",
+    "test-performance": "npx jest '([a-z])*.perf.spec.ts'",
     "test-ci": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage"
   },
   "repository": {
