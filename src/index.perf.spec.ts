@@ -1,3 +1,14 @@
+/**
+ * This file is used and has been used a _flexible_ in order to
+ * constantly test different scenarios for performance. Since the
+ * level of performance we are overall concerned with here is
+ * effectively academic (gains measured in nanoseconds in some
+ * cases), there hasn't been a major focus on this being a robust
+ * suite of tests.
+ *
+ * More info in ./src/perf.md
+ */
+
 import AuthorizationService from "./index";
 
 const printPerfMeasure = (startTime, endTime, unitMeasured) => {
@@ -11,6 +22,8 @@ const printPerfMeasure = (startTime, endTime, unitMeasured) => {
 };
 
 describe("Performance Benchmark", () => {
+  afterEach(() => AuthorizationService.resetPolicyMap());
+
   it("useCan operation: 1 roles - 1,000,000 policies", () => {
     /**
      * Setup the auth service with a very performance intesive role config
@@ -33,11 +46,9 @@ describe("Performance Benchmark", () => {
     const end = process.hrtime.bigint();
     printPerfMeasure(start, end, "userCan()");
     expect(can).toEqual(true);
-
-    AuthorizationService.resetPolicyMap();
   });
 
-  it.only("useCan operation: 10,000 roles - 1,000 policies", () => {
+  it("useCan operation: 10,000 roles - 1,000 policies", () => {
     /**
      * Setup the auth service with a very performance intesive role config
      */
