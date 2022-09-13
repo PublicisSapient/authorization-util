@@ -41,7 +41,18 @@ const AuthorizationService = {
     const rolesFound = policyMap.filter((policy) =>
       roles.includes(policy.role)
     );
-    const policiesFound = rolesFound.flatMap((role) => role.policies);
+
+    const policiesFound = [];
+    let rolesFoundIterator = rolesFound.length;
+    while (rolesFoundIterator--) {
+      let policiesIterator = rolesFound[rolesFoundIterator].policies.length;
+      while (policiesIterator--) {
+        policiesFound.push(
+          rolesFound[rolesFoundIterator].policies[policiesIterator]
+        );
+      }
+    }
+
     return policiesFound.includes(policy);
   },
 
@@ -50,6 +61,13 @@ const AuthorizationService = {
    * values that have been passed - (array _copy_ only!)
    */
   getPolicyMap: () => [...policyMap],
+
+  /**
+   * TEMP: Testing
+   */
+  resetPolicyMap: () => {
+    policyMap = [];
+  },
 };
 
 export default AuthorizationService;
