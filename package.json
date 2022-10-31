@@ -3,6 +3,7 @@
   "version": "1.4.4",
   "description": "Simplistic authorization management - alternative to heavy (though robust) solutions",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "bundle": "rollup -c rollup.config.js",
     "test": "npx jest '([a-z])*.unit.spec.ts'",
