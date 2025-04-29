@@ -1,11 +1,13 @@
 /**
- * ENV set to "jsdom" in order to gain the fetch API (Headers in particular)
- * @jest-environment jsdom
+ * ENV set to "node" to assert functionality executing on the server.
+ * This setting is redundant to the default jest config in `jest.config.js`,
+ * but is helpful to have here for clarity.
+ * @jest-environment node
  */
 
 import AuthorizationService from "./index";
 
-describe("Authorization Service", () => {
+describe("Authorization Service :: Node", () => {
   it("initializes with empty policy map", () => {
     expect(AuthorizationService.getPolicyMap()).toEqual([]);
   });
@@ -20,7 +22,7 @@ describe("Authorization Service", () => {
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve({ roles: ["contact_center_associate"] }),
-      })
+      }),
     );
 
     const aToken = "a_sample_token";
@@ -29,7 +31,7 @@ describe("Authorization Service", () => {
     const profile = await AuthorizationService.profileAuthorize(
       aProfileURL,
       aTokenHeader,
-      aToken
+      aToken,
     );
 
     expect(global.fetch).toHaveBeenCalledWith(aProfileURL, {
@@ -81,7 +83,7 @@ describe("Authorization Service", () => {
 
   it("does not add a new policy if the role has already been defined", () => {
     expect(
-      AuthorizationService.defineRole("store_associate", ["ingredientLocking"])
+      AuthorizationService.defineRole("store_associate", ["ingredientLocking"]),
     ).toBe(false);
 
     expect(AuthorizationService.getPolicyMap()).toEqual([
@@ -104,35 +106,35 @@ describe("Authorization Service", () => {
     expect(
       AuthorizationService.userCan(
         ["contact_center_associate"],
-        "manualPayments"
-      )
+        "manualPayments",
+      ),
     ).toBe(true);
     expect(
-      AuthorizationService.userCan(["store_associate"], "ingredientLocking")
+      AuthorizationService.userCan(["store_associate"], "ingredientLocking"),
     ).toBe(true);
     expect(
       AuthorizationService.userCan(
         ["contact_center_associate"],
-        "ingredientLocking"
-      )
+        "ingredientLocking",
+      ),
     ).toBe(false);
     expect(
-      AuthorizationService.userCan(["store_associate"], "manualPayments")
+      AuthorizationService.userCan(["store_associate"], "manualPayments"),
     ).toBe(false);
     expect(
-      AuthorizationService.userCan(["store_associate"], "common_auth")
+      AuthorizationService.userCan(["store_associate"], "common_auth"),
     ).toBe(true);
     expect(
       AuthorizationService.userCan(
         ["store_associate", "contact_center_associate"],
-        "unregistered_policy"
-      )
+        "unregistered_policy",
+      ),
     ).toBe(false);
     expect(
       AuthorizationService.userCan(
         ["store_associate", "contact_center_associate"],
-        "common_auth"
-      )
+        "common_auth",
+      ),
     ).toBe(true);
   });
 });
